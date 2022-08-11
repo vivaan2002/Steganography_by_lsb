@@ -10,10 +10,9 @@ def PSNR(original, new):
     max_pixel = 255.0
     psnr = 20 * log10(max_pixel / sqrt(mse))
     return [psnr,mse]
-  
 def main():
-     original = cv2.imread("./tif/original_tif.tif")
-     new = cv2.imread("./tif/stago_tif.tif", 1)
+     original = cv2.imread("./png/lena.png")
+     new = cv2.imread("./png/s_lena.png", 1)
      value = PSNR(original, new)
      print()
      print(f"PSNR value is {value[0]} dB")
