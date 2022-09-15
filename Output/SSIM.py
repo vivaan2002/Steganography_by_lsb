@@ -3,8 +3,8 @@ import argparse
 import imutils
 import cv2
 
-imageA = cv2.imread("./jpg_new/lena.jpg")
-imageB = cv2.imread("./jpg_new/st_jpg.png")
+imageA = cv2.imread("./bmp_new/lena.bmp")
+imageB = cv2.imread("./bmp_new/st_bmp.bmp")
 
 # 4. Convert the images to grayscale
 grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
