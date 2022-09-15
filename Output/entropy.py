@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
 
-img1=cv2.imread('./tif/original_tif.tif')
-img2=cv2.imread('./tif/stago_tif.tif')
+img1=cv2.imread('./png_new/lena.png')
+img2=cv2.imread('./png_new/st_png.png')
 
 marg1 = np.histogramdd(np.ravel(img1), bins = 256)[0]/img1.size
 marg1 = list(filter(lambda p: p > 0, np.ravel(marg1)))

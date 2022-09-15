@@ -1,4 +1,5 @@
 import cv2
+import time
 import numpy as np
 
 file=open("Message.txt","r")
@@ -79,6 +80,8 @@ def showData(image):
 
 def encode_text(): 
   image_name = input("Enter image name(with extension): ") 
+  filename = input("Enter the name of new encoded image(with extension): ")
+  st=time.time()
   image = cv2.imread(image_name)
 
   
@@ -88,18 +91,22 @@ def encode_text():
   dat = data 
   if (len(dat) == 0): 
     raise ValueError('Data is empty')
-  
-  filename = input("Enter the name of new encoded image(with extension): ")
+
   encoded_image = hideData(image, data) 
   cv2.imwrite(filename, encoded_image)
+  et=time.time()
+  print("Time = ",et-st)
 
  
 def decode_text():
   
   image_name = input("Enter the name of the steganographed image that you want to decode (with extension) :") 
+  st=time.time()
   image = cv2.imread(image_name) 
     
   text = showData(image)
+  et=time.time()
+  print("Time = ",et-st)
   return text
 
          
@@ -112,7 +119,9 @@ def Steganography():
           
     elif (userinput == 2):
       print("\nDecoding....") 
-      print("Decoded message is " + decode_text()) 
+      text=decode_text()
+      # print("Decoded message is " + decode_text())
+      # print("Time = ",et-st)
     else: 
         raise Exception("Enter correct input") 
           
