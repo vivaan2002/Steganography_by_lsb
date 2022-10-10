@@ -7,7 +7,7 @@ for i,col in enumerate(color):
     histr = cv.calcHist([img],[i],None,[256],[0,256])
     plt.plot(histr,color = col)
     plt.xlim([0,256])
-plt.title("Histogram Stago Image")
+plt.title("Histogram Stego Image")
 plt.legend(["Red Channel","Green Channel","Blue Channel"])
 plt.xlabel("Frequency of Pixel")
 plt.ylabel("Number of Pixel")
